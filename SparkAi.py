@@ -97,8 +97,7 @@ def on_message(ws, message):
             choices = data["payload"]["choices"]
             jsonify({'result': choices["text"][0]["content"]})
             status = choices["status"]
-            content = choices["text"][0]["content"]
-            print(content,end='')
+            print(choices["text"][0]["content"],end='')
 
             if status == 2:
                 ws.close()
